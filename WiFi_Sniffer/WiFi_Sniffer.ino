@@ -107,6 +107,8 @@ void connectToWiFi() {
   Serial.print("Connecting to ");
   Serial.println(mySSID);
 
+  WiFi.persistent(false);
+  WiFi.mode(WIFI_OFF);
   WiFi.mode(WIFI_STA);
   WiFi.begin(mySSID, myPASSWORD);
 
@@ -233,4 +235,3 @@ void sendDevices() {
   wifi_promiscuous_enable(enable);
   sendEntry = millis();
 }
-
